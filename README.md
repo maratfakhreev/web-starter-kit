@@ -1,12 +1,24 @@
 # Web starter kit
 
-Kick-start your new SPA based on Babel + Webpack and including minimal testing, code formatting and linter tools.
+Kick-start your new SPA including minimal building, testing, code formatting and linter tools.
+
+### Development tools
+- `Babel` as javascript compiler
+- `Webpack/Wepback dev server` as module bundler and http server
+- `Eslint/Prettier` as linting and formatting tools
+- `Jest` as testing framework
+- `Husky/Lint staged` as tools for preventing bad commits into repository
+
+### Application tools
+- `Axios` as library for http request. And I think that's all what you need :)
 
 ## Disclamer
 
-I really don't want to create another framework specific huge and complicated boilerplate which is too much on the internet. It's more like a bunch of my favorite configs for rapid initialization of modern web app based on a framework and tools that you really want.
+I really don't want to create another complicated, huge and framework specific boilerplate we have too much on the internet. It's more like a bunch of my favorite configs for rapid initialization of modern web app based on a framework and tools that you really need.
 
-Also it doesn't include any tools for stylesheets because it's so project-specific part. Basically I prefer to use `styles-components` in React/Vue projects but for something small it's more easier to prepare css modules based on PostCSS and `postcss-preset-env`.
+Also it doesn't include any tools for stylesheets because this is too project specialized part. Basically I prefer using `styled-components` in React/Vue projects but for something small it's more easier to prepare css modules based on PostCSS and `postcss-preset-env` for example.
+
+Below I provide an instruction how to make a React boilerplate just in 5 minutes.
 
 ## Quick start
 
@@ -17,7 +29,7 @@ git clone git@github.com:maratfakhreev/web-starter-kit.git --origin web-starter-
 cd [MY-NEW-PROJECT] && yarn install
 ```
 
-### Available commands
+Available commands:
 
 ```bash
 yarn start # start the application with development environment and run webpack-dev-server
@@ -26,3 +38,55 @@ yarn format # format code via prettier
 yarn lint # lint code via eslint
 yarn test # test code via jest
 ```
+
+## Setup minimal React based environment
+
+1. Install additional dependencies.
+
+```bash
+  yarn add react react-dom styled-components
+  yarn add --dev @babel/preset-react eslint-plugin-react
+```
+
+2. Add `@babel/preset-react` to .babelrc.
+
+```javascript
+{
+  "presets": [
+    //...,
+    "@babel/preset-react"
+  ]
+}
+```
+
+3. Add react recommended rules to .eslintrc.
+
+```javascript
+{
+  "extends": [
+    //...,
+    "plugin:react/recommended"
+  ],
+}
+```
+
+4. Change wepback config entry point to `index.jsx` file.
+
+```javascript
+const appConfig = {
+  //...,
+  entry: [path.resolve('app', 'index.jsx')],
+}
+```
+
+5. Use code like this in your `index.jsx` entry point.
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Application from 'components/Application'; // root component
+
+render(<Application />, document.getElementById('app'));
+```
+
+6. If you want to set up test environment I'd suggest this [guide](https://medium.freecodecamp.org/how-to-set-up-jest-enzyme-like-a-boss-8455a2bc6d56)
