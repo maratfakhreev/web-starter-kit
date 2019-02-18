@@ -1,7 +1,7 @@
 {
   "name": "web-starter-kit",
   "publicName": "Web starter kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Marat Fakhreev <marat.fakhreev@gmail.com>",
   "license": "MIT",
   "scripts": {
