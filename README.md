@@ -18,7 +18,7 @@ I really don't want to create another complicated, huge and framework specific b
 
 Also it doesn't include any tools for stylesheets because this is too project specialized part. Basically I prefer using `styled-components` in React/Vue projects but for something small it's more easier to prepare css modules based on PostCSS and `postcss-preset-env` for example.
 
-Below I provide instructions how to make a React or Vue boilerplate just in 3 minutes. Because I'm a fun of `jsx` and `styled-components` both boilerplates are based on these technologies.
+Below I provide instructions how to make a React or Vue boilerplate just in 3 minutes. Because I'm a fun of `jsx` and `styled-components` both examples are based on these technologies.
 
 ## Quick start
 
